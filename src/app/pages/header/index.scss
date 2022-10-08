@@ -1,0 +1,149 @@
+.navigation {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 0rem;
+  background-color: #feebdd;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.header-name {
+  text-decoration: none;
+  margin-left: 5%;
+
+  img {
+    width: 80%;
+  }
+}
+
+.header-menu {
+  margin-right: 10%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-menu ul {
+  display: flex;
+  padding: 0;
+}
+
+.header-menu li {
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
+.header-menu li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  color: #123F5C;
+  font-weight: 600;
+}
+
+.hamburger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #284559;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamburger:hover {
+  background-color: #284559;
+}
+
+@media screen and (min-width:320px) and (max-width: 760px) {
+  .navigation {
+    height: 60%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header-name {
+    margin-left: 0%;
+
+    img {
+      width: 70%;
+    }
+  }
+
+  .header-menu ul {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    // height: calc(100vh - 77px);
+    height: fit-content;
+    background-color: white;
+    border-top: 1px solid black;
+  }
+
+  .header-menu li {
+    text-align: center;
+    margin: 0;
+  }
+
+  .header-menu li a {
+    color: black;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .header-menu li:hover {
+    background-color: #eee;
+  }
+
+  .header-menu ul {
+    display: none;
+  }
+
+  .header-menu.expanded ul {
+    display: block;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1020px) {
+  .header-name {
+    width: 30%;
+    margin-left: 3%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .header-menu {
+    margin-right: 5%;
+
+    li {
+      margin: 0 10px;
+
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
